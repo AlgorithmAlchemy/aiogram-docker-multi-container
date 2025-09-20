@@ -15,49 +15,38 @@
 
 - Python 3.7+
 - Docker
-- Docker Compose (по желанию, для удобства работы с множеством контейнеров)
 - Файл `api_keys.txt` с токенами ботов
 
 ## Установка
 
 1. **Склонируйте репозиторий:**
 
-   ```bash
+   ```
    git clone https://github.com/your-repo/aiogram-docker-sample.git
    cd aiogram-docker-sample
+   ```
 
-2. **Создайте файл с токенами:**
-    ```bash
-    В корне проекта создайте файл api_keys.txt, где каждый токен бота будет записан на новой строке:
-3. **Создайте Docker image:**
+2. **Создайте Docker image:**
 Выполните команду, чтобы собрать Docker image для бота:
-    ```bash
-   docker build -t aiogram_bot_image .
+    ```
+   docker build -t aiogram_bot_image
+    ```
    
 
 
-**Основные команды:**
-### Запуск всех ботов:
+## **Основные команды:**
+#### Запуск всех ботов:
+     python run_bots.py
+   
 
-    ```bash
-    python run_bots.py
+#### Остановка всех ботов:
+      python stop_bots.py
 
-### Остановка всех ботов:
+#### Проверка активных контейнеров:
+      docker ps
 
-    ```bash
-    python stop_bots.py
+#### Просмотр логов контейнера:
+      docker logs <container_name>
 
-### Проверка активных контейнеров:
-
-    ```bash
-    docker ps
-
-### Просмотр логов контейнера:
-
-    ```bash
-    docker logs <container_name>
-
-### Остановка определённого контейнера:
-
-    ```bash
-    docker stop <container_name>
+#### Остановка определённого контейнера:
+      docker stop <container_name>
