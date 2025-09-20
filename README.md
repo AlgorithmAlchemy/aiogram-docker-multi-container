@@ -1,8 +1,13 @@
 # Aiogram Telegram Bot in Docker
 
+ `⭐️ Thanks everyone who has starred the project, it means a lot!`
+
 ## Description
 
 This is an example of a bot built on the Aiogram library, packaged in a Docker container for easy deployment and management. The bot features both a regular button keyboard and inline buttons for user interaction. The main goal of the project is to enable running multiple bot instances with different tokens in separate containers for scalability and convenient management.
+
+**Read this in other languages:** [Русский (README\_ru.md)](README_ru.md)
+
 
 ## Bot Features
 
