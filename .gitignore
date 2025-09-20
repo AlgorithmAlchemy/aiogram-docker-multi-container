@@ -12,7 +12,6 @@ __pycache__/**/
 *.pyd
 *.pyc
 
-
 # Common typo/mistake variants
 pycache/
 PyCache/
@@ -52,17 +51,12 @@ venv_env/
 .Python
 build/
 dist/
-parts/
 sdist/
 wheels/
 downloads/
 .eggs/
 *.egg
 *.egg-info/
-lib/
-lib64/
-var/
-share/python-wheels/
 .installed.cfg
 MANIFEST
 
@@ -121,7 +115,6 @@ site/
 # -------------------------
 # IDEs
 # -------------------------
-.idea
 .idea/
 .vscode/
 .spyderproject
@@ -177,44 +170,6 @@ celerybeat.pid
 # PyPI / Private config
 # -------------------------
 .pypirc
-
-# -------------------------
-# Custom project crap
-# -------------------------
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-*.tmp
-*~
-*.bak
-
-# -------------------------
-# SQLite temporary and ShowYourWork database files
-# -------------------------
-
-_showyourwork.sqlite
-_showyourwork.sqlite-journal
-_showyourwork.sqlite-wal
-_showyourwork.sqlite-shm
-_showyourwork.*
-showyourwork.sqlite
-showyourwork.sqlite-journal
-showyourwork.sqlite-wal
-showyourwork.sqlite-shm
-*.sqlite
-*.sqlite3
-
-# -------------------------
-# Translations
-# -------------------------
-*.mo
-*.pot
-
-# -------------------------
-# Cython debug symbols
-# -------------------------
-cython_debug/
 
 # -------------------------
 # Custom project crap
