@@ -1,38 +1,37 @@
 import subprocess
 
 def run_bots():
-    # Читаем токены из файла
+    # Read tokens from file
     try:
         with open('api_keys.txt', 'r') as file:
             tokens = file.readlines()
     except FileNotFoundError:
-        print("Файл api_keys.txt не найден!")
+        print("File api_keys.txt not found!")
         return
 
-    # Запускаем контейнер для каждого токена
+    # Start container for each token
     for token in tokens:
         if not token:
-            print("Токен не может быть пустым!")
+            print("Token cannot be empty!")
             return
 
-        token = token.strip()  # Убираем пробелы и переносы
-        if token:  # Проверяем, что строка не пустая
-            # Заменяем двоеточие на подчеркивание
+        token = token.strip()  # Remove spaces and newlines
+        if token:  # Check that the string is not empty
+            # Replace colon with underscore
             safe_token = token.replace(':', '_')
             container_name = f"bot_{safe_token}"
-            # Формируем команду для запуска контейнера
+            # Form command to start container
             command = [
                 'docker', 'run', '-d', '--name', container_name,
                 '--rm', 'aiogram_bot_image', 'python', 'main.py', token.strip()
             ]
 
             try:
-                # Запускаем команду
+                # Execute command
                 subprocess.run(command, check=True)
-                print(f"Запущен контейнер: {container_name}")
+                print(f"Container started: {container_name}")
             except subprocess.CalledProcessError as e:
-                print(f"Ошибка при запуске контейнера {container_name}: {e}")
+                print(f"Error starting container {container_name}: {e}")
 
 if __name__ == "__main__":
     run_bots()
-

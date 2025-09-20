@@ -2,34 +2,34 @@ import subprocess
 
 
 def stop_bots():
-    # Читаем токены из файла
+    # Read tokens from file
     try:
         with open('api_keys.txt', 'r') as file:
             tokens = file.readlines()
     except FileNotFoundError:
-        print("Файл api_keys.txt не найден!")
+        print("File api_keys.txt not found!")
         return
 
-    # Останавливаем контейнер для каждого токена
+    # Stop container for each token
     for token in tokens:
-        token = token.strip()  # Убираем пробелы и переносы
+        token = token.strip()  # Remove spaces and newlines
         if not token:
-            print("Токен не может быть пустым!")
+            print("Token cannot be empty!")
             continue
 
-        # Заменяем двоеточие на подчеркивание, чтобы совпадало с именами контейнеров
+        # Replace colon with underscore to match container names
         safe_token = token.replace(':', '_')
         container_name = f"bot_{safe_token}"
 
-        # Формируем команду для остановки контейнера
+        # Form command to stop container
         command = ['docker', 'stop', container_name]
 
         try:
-            # Останавливаем контейнер
+            # Stop container
             subprocess.run(command, check=True)
-            print(f"Контейнер {container_name} остановлен.")
+            print(f"Container {container_name} stopped.")
         except subprocess.CalledProcessError as e:
-            print(f"Ошибка при остановке контейнера {container_name}: {e}")
+            print(f"Error stopping container {container_name}: {e}")
 
 
 if __name__ == "__main__":
