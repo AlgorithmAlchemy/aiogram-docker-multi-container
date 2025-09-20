@@ -1,52 +1,50 @@
 # Aiogram Telegram Bot in Docker
 
-## Описание
+## Description
 
-Это пример бота на базе библиотеки Aiogram, упакованный в контейнер Docker для удобного развертывания и управления. Бот имеет как обычную кнопочную клавиатуру, так и инлайн-кнопки, которые могут быть использованы для взаимодействия с пользователем. Главная цель проекта — возможность запуска нескольких копий бота с разными токенами в отдельных контейнерах для масштабируемости и удобного управления.
+This is an example of a bot built on the Aiogram library, packaged in a Docker container for easy deployment and management. The bot features both a regular button keyboard and inline buttons for user interaction. The main goal of the project is to enable running multiple bot instances with different tokens in separate containers for scalability and convenient management.
 
-## Функционал бота
+## Bot Features
 
-- Обычные кнопочные клавиатуры для текстового общения
-- Инлайн-кнопки с callback-ответами
-- Удобное управление ботами через Docker
-- Поддержка множества ботов с помощью отдельного контейнера для каждого токена
+- Regular button keyboards for text communication
+- Inline buttons with callback responses
+- Convenient bot management via Docker
+- Support for multiple bots using separate containers for each token
 
-## Требования
+## Requirements
 
 - Python 3.7+
 - Docker
-- Файл `api_keys.txt` с токенами ботов
+- `api_keys.txt` file with bot tokens
 
-## Установка
+## Installation
 
-1. **Склонируйте репозиторий:**
+1. **Clone the repository:**
 
    ```
    git clone https://github.com/your-repo/aiogram-docker-sample.git
    cd aiogram-docker-sample
    ```
 
-2. **Создайте Docker image:**
-Выполните команду, чтобы собрать Docker image для бота:
+2. **Create Docker image:**
+Run the command to build the Docker image for the bot:
     ```
-   docker build -t aiogram_bot_image
+   docker build -t aiogram_bot_image .
     ```
-   
 
-
-## **Основные команды:**
-#### Запуск всех ботов:
+## **Main Commands:**
+#### Start all bots:
      python run_bots.py
    
 
-#### Остановка всех ботов:
+#### Stop all bots:
       python stop_bots.py
 
-#### Проверка активных контейнеров:
+#### Check active containers:
       docker ps
 
-#### Просмотр логов контейнера:
+#### View container logs:
       docker logs <container_name>
 
-#### Остановка определённого контейнера:
+#### Stop a specific container:
       docker stop <container_name>
