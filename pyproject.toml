@@ -9,9 +9,9 @@ name = "aiogram-docker-sample"
 version = "0.1.0"
 description = "Async Telegram bot using aiogram"
 authors = [
-    { name = "AlgorithmAlchemy"}
+    { name = "AlgorithmAlchemy" }
 ]
-requires-python = ">=3.10"
+requires-python = "==3.9.*"
 
 dependencies = [
     "asyncio~=3.4.3",
@@ -24,15 +24,22 @@ include = ["*"]
 
 [tool.black]
 line-length = 88
-target-version = ['py310']
+target-version = ['py39']
 
 [tool.isort]
 profile = "black"
 
 [tool.mypy]
-python_version = "3.13"
+python_version = "3.9"
 strict = true
-ignore_missing_imports = true
+ignore_missing_imports = false
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
 
 [tool.flake8]
 max-line-length = 88

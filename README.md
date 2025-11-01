@@ -18,7 +18,7 @@ This is an example of a bot built on the Aiogram library, packaged in a Docker c
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+
 - Docker
 - `api_keys.txt` file with bot tokens
 

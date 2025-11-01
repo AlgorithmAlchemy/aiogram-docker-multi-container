@@ -18,7 +18,7 @@
 
 ## Требования
 
-- Python 3.7+
+- Python 3.9+
 - Docker
 - Файл `api_keys.txt` с токенами ботов
 
