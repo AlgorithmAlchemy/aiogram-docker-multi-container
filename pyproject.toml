@@ -1,0 +1,39 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aiogram-docker-sample"
+version = "0.1.0"
+description = "Async Telegram bot using aiogram"
+authors = [
+    { name = "AlgorithmAlchemy"}
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "asyncio~=3.4.3",
+    "aiogram~=3.13.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+ignore_missing_imports = true
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
